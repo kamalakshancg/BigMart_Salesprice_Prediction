@@ -1,8 +1,6 @@
-FROM python
-RUN python3 install pip
-RUN pip install flask
-RUN pip install -r requirements.txt
+FROM python:3.7-buster
 COPY . /admin
 WORKDIR /admin
-EXPOSE 4000
+EXPOSE 5000
+RUN pip install -r requirements.txt
 CMD ["python","app.py"]
